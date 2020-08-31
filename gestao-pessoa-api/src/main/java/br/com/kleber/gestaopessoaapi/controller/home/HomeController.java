@@ -16,7 +16,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/source")
     public ResponseEntity source() {
-        return ResponseEntity.ok(new MensagemVM("https://kleber.git"));
+        return ResponseEntity.ok(new MensagemVM("https://github.com/kleberrezende/gestao-pessoa"));
     }
 
 }
