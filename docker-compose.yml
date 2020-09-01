@@ -1,0 +1,35 @@
+# docker-compose up --build
+
+version: "3.8"
+
+services:
+  mysql-service:
+    container_name: mysqlContainer
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root12345
+      - MYSQL_DATABASE=gestao_pessoa
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root12345
+    ports:
+      - "3306:3036"
+    networks:
+      - app-mysql-network
+    restart: always
+
+  web-service:
+    container_name: gestaoPessoaContainer
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - app-mysql-network
+    depends_on:
+      - mysql-service
+    restart: always
+
+networks:
+  app-mysql-network:
+    driver: bridge

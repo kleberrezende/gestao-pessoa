@@ -6,7 +6,7 @@
     <groupId>br.com.kleber</groupId>
     <artifactId>gestao-pessoa-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>gestao-pessoa-api</name>
     <description>Gestão de Pessoas</description>
